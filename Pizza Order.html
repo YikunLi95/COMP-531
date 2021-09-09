@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Order</title>
+</head>
+<body>
+<h1>Pizza Guys Order Form</h1>
+<img src="https://www.hungryhowies.com/sites/default/files/styles/menu_item_280x175/public/images/menu-items/thumbnails/buildyourownpizza_0.png?itok=fgzFck86">
+<form id = "myForm" method = "" action = "#">
+    <label>Name: (required)<br><input type = "text" name = "name"  placeholder = "First name, Last name" required></label>
+    <br><br>
+    <label>Address: (required)<br><input type = "text" name = "address" placeholder = "Delivery address" required></label>
+    <br><br>
+    <label>Phone Number: (required)<br>
+        <input type = "tel" id = "phone" name = "phone" placeholder = "123-123-1234" pattern = "\d{3}-\d{3}-\d{4}" required>
+    </label>
+
+    <p>Pizza size (required)</p>
+
+    <div>
+        <input type = "radio" id = "large" name = "drone" value = "large" required>
+        <label for="large">Large</label>
+        <input type = "radio" id = "medium" name = "drone" value = "medium">
+        <label for="medium">Medium</label>
+        <input type = "radio" id = "small" name = "drone" value = "small">
+        <label for="small">Small</label>
+    </div>
+
+    <p>Pizza Toppings (options)</p>
+
+    <div>
+        <input type = "checkbox" id = "sausage" name = "sausage">
+        <label for="sausage">Sausage</label>
+        <input type = "checkbox" id = "onion" name = "onion">
+        <label for="onion">Onion</label>
+        <input type = "checkbox" id = "pepperoni" name = "pepperoni">
+        <label for="pepperoni">Pepperoni</label>
+        <input type = "checkbox" id = "olives" name = "olives">
+        <label for="olives">Olives</label>
+        <input type = "checkbox" id = "anchovies" name = "anchovies">
+        <label for="anchovies">Anchovies</label>
+    </div>
+
+    <br>
+    <input type = "submit" value = "Place Order">
+    <input type = "reset" value = "Clear">
+</form>
+</body>
+</html>

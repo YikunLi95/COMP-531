@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello JavaScript</title>
+</head>
+<body>
+<h1>Yikun Li</h1>
+
+<img src="https://www.google.com/logos/doodles/2021/doodle-champion-island-games-august-26-6753651837109002-s.png">
+<p>Github username: YikunLi95</p>
+<p>Text: Ate some tasty sea food during the trip to New Orlean</p>
+<p>3 favorite links:
+    <a href="https://www.google.com/">Google</a>;
+    <a href="https://www.amazon.com/">Amazon</a>;
+    <a href="https://github.com/">Github</a>.
+</p>
+<textarea>
+
+</textarea><br>
+<span id = "indicator">10</span>
+<script>
+    const f1 = function (a) {
+        var msg;
+        if (a) {
+            msg = "";
+        } else {
+            msg = "The page will redirect when the counter reaches zero";
+        }
+        alert(msg);
+    };
+    setTimeout(f1, 5000);
+
+    const f2 = function() {
+        document.getElementById("indicator").innerHTML = document.getElementById("indicator").innerHTML - 1;
+    }
+    setInterval(f2, 1000);
+
+    const f3 = function() {
+        location.href = "https://www.rice.edu/";
+    }
+    setTimeout(f3, 10000);
+
+</script>
+</body>
+</html>
+
