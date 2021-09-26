@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <meta name = "author" content = "Yikun Li">
+</head>
+<body onload = "document.getElementById('timestamp').value = String(new Date().getTime())">
+  <h1>HW1-Registration Page</h1>
+  <p>Registration Instructions:</p>
+  <p>1. Account name can only be upper or lower case letters and numbers, but may not start with a number. The account name may contain both letters and numbers or only letters.</p>
+  <p>2. Email Address must be in a format like: "xxx@xxx", no need to contain ".com".</p>
+  <p>3. Phone Number must be in a format like: "123-123-1234".</p>
+  <p>4. Zipcode must be a 5-digit number.</p>
+
+  <form id = "myForm" method = "GET" action = "formProcessor.html" onsubmit = "return underAgeValidate() && confirmPassword()">
+    <label for = "username">Account Name:</label><br>
+    <input type="text" id="username" name="username" pattern = "[a-zA-Z]{1}[a-zA-Z\d]*" required>
+    <br><br>
+
+    <label>Display Name: (optional)</label><br>
+    <input type = "text" name = "display name" placeholder = "Leo Li">
+    <br><br>
+
+    <label for = "email">Email Address:</label><br>
+    <input type = "email" id = "email" name = "email" placeholder = "yl212@rice" required>
+    <br><br>
+
+    <label for = "phone">Phone Number:</label><br>
+    <input type = "tel" id = "phone" name = "phone" placeholder = "123-123-1234" pattern = "\d{3}-\d{3}-\d{4}" required>
+    <br><br>
+
+    <label for = "birthday">Date of Birth:</label><br>
+    <input type = "date" id = "birthday" name = "birthday" required>
+    <br><br>
+
+    <label>Zipcode:</label><br>
+    <input type = "text" id = "zipcode" name = "zipcode" placeholder = "12345" pattern = "\d{5}" required>
+    <br><br>
+
+    <label for = "pwd">Password:</label><br>
+    <input type = "password" id = "pwd" name = "pwd" required>
+    <br><br>
+
+    <label for = "cpwd">Password Confirmation:</label><br>
+    <input type = "password" id = "cpwd" name = "cpwd" required>
+    <br><br>
+
+    <input type = "hidden" id = "timestamp" name = "timestamp">
+    <input type = "submit" value = "Submit">
+    <input type = "reset" value = "Clear">
+  </form>
+
+  <script>
+    function underAgeValidate() {
+      const birthday = new Date(document.getElementById("birthday").value);
+      const currentDate = new Date();
+      const myAge = (currentDate - birthday) / (31557600000);
+
+      if(myAge < 18) {
+        alert("Only individuals 18 years of age or older on the day of registration are allowed to register");
+        return false;
+      }else{
+        return true;
+      }
+    }
+
+    function confirmPassword() {
+      if (document.getElementById("pwd").value == document.getElementById("cpwd").value) {
+        return true;
+      } else {
+        alert("The confirmed password does not match the password");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

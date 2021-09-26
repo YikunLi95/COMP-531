@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formProcessor</title>
+    <meta name = "author" content = "Yikun Li">
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>HW1-Form Processor Page</h1>
+    <br><br>
+
+    <span id = "table"></span>
+</body>
+<script>
+    let rawString = window.location.search.substring(1).split("&");
+    let k_vPairs = [];
+    for (let index = 0; index < rawString.length; index++) {
+        k_vPairs[index] = rawString[index].split("=");
+    }
+    let rows = k_vPairs.length;
+    let cols = k_vPairs[0].length;
+
+    // convert timestamp
+    let timestamp = k_vPairs[rows - 1][cols - 1];
+    let date = new Date(Number(timestamp));
+    k_vPairs[rows - 1][cols - 1] = date;
+
+    // replace password
+    let length = k_vPairs[6][1].length;
+    let array = [];
+    for (let i = 0; i < length; i++) {
+        array += "*";
+    }
+    k_vPairs[6][1] = array;
+    k_vPairs[7][1] = array;
+
+    // decoding
+    let uri_dec = decodeURIComponent(k_vPairs[2][1]);
+    k_vPairs[2][1] = uri_dec;
+
+    // build table
+    let stringBuilder = "<table id = 'myTable'>";
+    for (let i = 0; i < rows; i++) {
+        stringBuilder += "<tr>";
+        for (let j = 0; j < cols; j++) {
+            stringBuilder += "<td>";
+            stringBuilder += k_vPairs[i][j] + "</td>";
+        }
+        stringBuilder += "</tr>";
+    }
+    stringBuilder += "</table>";
+    document.getElementById("table").innerHTML += stringBuilder;
+</script>
+</html>
