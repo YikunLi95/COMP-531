@@ -1,2 +1,2 @@
-# COMP-531
-In class training
+#COMP-531
+##In class training and homeworks
