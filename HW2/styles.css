@@ -1,0 +1,87 @@
+.card {
+    text-align:center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width:400px;
+    height:800px;
+    transition: 0.3s;
+    border: 100px;
+}
+
+
+table.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+table.container {
+    padding: 20px 16px;
+    border: 100px;
+    border-color: gold;
+}
+table {
+    border: 100px lightgray;
+    border-radius: 20px;
+}
+table:hover{
+    background-color: yellowgreen;
+}
+table, td {
+    padding: 50px;
+    border: 1px solid black;
+}
+div img {
+    width: 400px;
+    max-height: 800px;
+    outline: solid 1px black;
+}
+
+.animation {
+    width: 400px;
+    max-height: 300px;
+    outline: solid 4px black;
+}
+div button{
+    width:120px;
+    height:40px;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    background-color: rebeccapurple;
+    color:papayawhip;
+    display: block;
+    height: 30px;
+    width: 150px;
+    font-size: 20px;
+
+}
+.frontEndInterface{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: relative;
+    width: 250px;
+    height: 100px;
+    z-index: 15;
+    right: 0%;
+    left: 40%;
+    background-color:goldenrod;
+}
+
+div.panel-body{
+    max-width: 475px;
+}
+
+div.centerForm{
+    display: block;
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    min-width: 200px;
+    background-color: wheat;
+    border-radius:20px;
+}
+
+div.row{
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
