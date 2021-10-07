@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh" class = "no-js demo-1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Yikun Li">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="tankwars.js"></script>
+    <script src="enemy.js"></script>
+    <script src="bullet.js"></script>
+    <script src="crackAnimation.js"></script>
+    <link rel="stylesheet" type="text/css" href="tankwars.css" />
+    <style type="text/css">
+        #canvasDiv canvas{
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <head><h3>Tank Wars</h3></head>
+        <p>Left Click to Move, Space to Attack, Right Click to Stop</p>
+        <div class="main clearfix">
+            <div id="canvasDiv" >
+                <canvas id="tankCanvas" ></canvas>
+                <canvas id="enemyCanvas" ></canvas>
+                <canvas id="stageCanvas" ></canvas>
+            </div>
+        </div>
+
+    </div><!-- /container -->
+</body>
+</html>
